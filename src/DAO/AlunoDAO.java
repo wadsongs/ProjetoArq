@@ -1,5 +1,7 @@
 package DAO;
 
+import Modal.Aluno;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,6 +10,7 @@ import java.sql.SQLException;
 public class AlunoDAO {
 
     public void newAluno(String newcpf, String newsenha) {
+
         // Dados de conexão
         String url = "jdbc:postgresql://localhost:5432/Gym01";
         String usuario = "postgres";
