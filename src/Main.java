@@ -1,20 +1,16 @@
-import DAO.AlunoDAO;
-import DAO.Cadastro;
-import DAO.FuncionarioDAO;
-import Modal.Aluno;
+import DAO.FichaDAO;
+import Modal.Ficha;
 import SRP.UserProvider;
 import SRP.UserRequest;
 import SRP.UserService;
 
 public class Main {
     public static void main(String[] args) {
-//        Login login = new Login();
-//
-//        login.login("000", "11111");
 
+        //Cria um novo usuário
         UserProvider userProvider = new UserProvider();
         UserService userService = new UserService(userProvider);
-        UserRequest request = new UserRequest("3333", "3333");
+        UserRequest request = new UserRequest("3455996", "3455996", "Wadson Gurgel");
 
         try {
             userService.addUser(request);
@@ -22,5 +18,18 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
         }
+
+//        Realiza o login do Usuário
+        Login loginUser = new Login();
+        loginUser.login("3455996", "3455996");
+
+        FichaDAO fichaInst = new FichaDAO();
+
+//        Cadastro Ficha
+        fichaInst.cadastrarFicha(new Ficha(1,11));
+
+//        Visualização de Ficha
+        fichaInst.buscarFichasPorUsuario(11);
+
     }
 }

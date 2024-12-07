@@ -3,10 +3,12 @@ package SRP;
 public class UserRequest {
     private String cpf;
     private String senha;
+    private String nome;
 
-    public UserRequest(String cpf, String senha) {
+    public UserRequest(String cpf, String senha, String nome) {
         this.cpf = cpf;
         this.senha = senha;
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -15,6 +17,10 @@ public class UserRequest {
 
     public String getSenha() {
         return senha;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public boolean isValid() {

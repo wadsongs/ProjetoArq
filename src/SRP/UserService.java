@@ -18,6 +18,6 @@ public class UserService {
         }
 
         // Salva o usuário no banco
-        userProvider.saveUser(request.getCpf(), request.getSenha());
+        userProvider.saveUser(request.getCpf(), request.getSenha(), request.getNome());
     }
 }

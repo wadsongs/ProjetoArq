@@ -1,7 +1,9 @@
+package Payment;
+
 public class Cartao implements Pagamento{
     @Override
     public void pagamentoCartao() {
-        System.out.println("Pagamento Cartao realizado!");
+        System.out.println("Payment.Pagamento Payment.Cartao realizado!");
     }
 
     @Override

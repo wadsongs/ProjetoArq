@@ -1,3 +1,5 @@
+package Payment;
+
 public class Pix implements Pagamento{
     @Override
     public void pagamentoCartao() {
@@ -6,6 +8,6 @@ public class Pix implements Pagamento{
 
     @Override
     public void pagamentoPix() {
-        System.out.println("Pagamento Pix realizado!");
+        System.out.println("Payment.Pagamento Payment.Pix realizado!");
     }
 }

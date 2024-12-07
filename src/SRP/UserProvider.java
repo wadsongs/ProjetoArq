@@ -9,7 +9,7 @@ public class UserProvider {
     String password = "5245112";
 
     public boolean existsByCpf(String cpf) {
-        String query = "SELECT COUNT(*) FROM \"Usuario\" WHERE (cpf) = (?)";
+        String query = "SELECT COUNT(*) FROM usuario WHERE (cpf) = (?)";
         try (Connection conn = DriverManager.getConnection(url, usuario, password);
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, cpf);
@@ -23,12 +23,13 @@ public class UserProvider {
         return false;
     }
 
-    public void saveUser(String cpf, String senha) {
-        String query = "INSERT INTO \"Usuario\" (cpf, senha) VALUES (?, ?)";
+    public void saveUser(String cpf, String senha, String nome) {
+        String query = "INSERT INTO usuario (cpf, senha, nome) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(url, usuario, password);
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, cpf);
             stmt.setString(2, senha);
+            stmt.setString(3, nome);
             stmt.executeUpdate();
             System.out.println("Usuário salvo com sucesso!");
         } catch (SQLException e) {
